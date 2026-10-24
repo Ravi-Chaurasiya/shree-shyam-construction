@@ -19,7 +19,7 @@ export function Header() {
             SS
           </span>
           <span className="font-sans text-lg font-bold leading-tight">
-            SHRI SHYAM
+            SHREE SHYAM
             <br />
             <span className="text-xs tracking-[0.3em] text-primary">CONSTRUCTION</span>
           </span>
@@ -77,7 +77,7 @@ export function Footer() {
         </div>
         <div className="grid gap-10 border-b border-ink-foreground/20 py-10 sm:grid-cols-2 lg:grid-cols-[1.25fr_1fr_1fr] lg:gap-12 lg:py-12">
           <div>
-            <p className="font-sans text-xl font-bold">SHRI SHYAM CONSTRUCTION</p>
+            <p className="font-sans text-xl font-bold">SHREE SHYAM CONSTRUCTION</p>
             <p className="mt-4 text-ink-foreground/70">
               Construction &amp; management consultants.
               <br />
@@ -96,20 +96,20 @@ export function Footer() {
             ))}
           </nav>
           <address className="not-italic leading-7 text-ink-foreground/80">
-            <p>Jaipur, Rajasthan, India</p>
-            <a className="block transition-colors hover:text-primary" href="tel:+919876543210">
-              +91 98765 43210
+            <p>MAHALAXMI GARDEN, 1998/31, PART 2, BAJGERA ROAD, GURUGRAM, Gurgaon, Haryana, 122001</p>
+            <a className="block transition-colors hover:text-primary" href="tel:+919416779890">
+              +91 94167 79890
             </a>
             <a
               className="block break-words transition-colors hover:text-primary"
-              href="mailto:info@shrishyamconstruction.in"
+              href="mailto:info@shreeshyamconstruction.in"
             >
-              info@shrishyamconstruction.in
+              info@shreeshyamconstruction.in
             </a>
           </address>
         </div>
         <div className="flex flex-col gap-2 pt-6 text-sm text-ink-foreground/60 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Shri Shyam Construction</p>
+          <p>© {new Date().getFullYear()} Shree Shyam Construction</p>
           <p>Construction. Consultancy. Confidence.</p>
         </div>
       </div>

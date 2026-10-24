@@ -20,8 +20,8 @@ const items = [
 export const Route = createFileRoute("/gallery")({
   head: () =>
     meta(
-      "Project Gallery | Shri Shyam Construction",
-      "A look at residential, commercial and infrastructure projects built and managed by Shri Shyam Construction.",
+      "Project Gallery | Shree Shyam Construction",
+      "A look at residential, commercial and infrastructure projects built and managed by Shree Shyam Construction.",
     ),
   component: () => (
     <>

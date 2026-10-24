@@ -8,7 +8,7 @@ import { services, meta } from "@/components/site";
 export const Route = createFileRoute("/")({
   head: () =>
     meta(
-      "Shri Shyam Construction | Construction & Management Consultants",
+      "Shree Shyam Construction | Construction & Management Consultants",
       "Trusted construction and project management consultants delivering residential, commercial and industrial projects on time and on budget.",
     ),
   component: Index,
@@ -29,7 +29,7 @@ function Index() {
           className="hero-video opacity-60"
           aria-hidden="true"
         >
-          <source src="/shri-shyam-hero.mp4" type="video/mp4" />
+          <source src="/shree-shyam-hero.mp4" type="video/mp4" />
         </video>
         <div className="hero-scrim absolute inset-0" aria-hidden="true" />
         <div className="home-hero-content relative mx-auto max-w-7xl px-6 py-32 pb-28 md:py-44 md:pb-44">
@@ -37,7 +37,7 @@ function Index() {
             Construction & Management Consultants
           </p>
           <h1 className="mt-4 max-w-4xl text-5xl leading-[1.05] md:text-7xl">
-            Shri Shyam
+            Shree Shyam
             <br />
             Construction<span className="text-primary">.</span>
           </h1>
@@ -187,7 +187,7 @@ function Index() {
               to="/about"
               className="mt-9 inline-flex min-h-12 items-center gap-3 border border-border bg-background px-6 font-semibold transition-colors hover:border-primary hover:text-primary"
             >
-              Meet Shri Shyam
+              Meet Shree Shyam
               <span aria-hidden="true" className="text-lg leading-none">
                 ↗
               </span>

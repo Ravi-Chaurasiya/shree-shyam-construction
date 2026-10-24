@@ -8,7 +8,7 @@ const reviews = [
 ];
 
 export const Route = createFileRoute("/clients")({
-  head: () => meta("Our Clients | Shri Shyam Construction", "Trusted by developers, institutions and government bodies across the region."),
+  head: () => meta("Our Clients | Shree Shyam Construction", "Trusted by developers, institutions and government bodies across the region."),
   component: () => (
     <>
       <PageHero eyebrow="Clients" title="Trusted by builders, businesses & institutions" />

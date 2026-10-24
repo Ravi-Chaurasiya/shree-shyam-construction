@@ -3,11 +3,24 @@ import { useState } from "react";
 import { PageHero, meta } from "@/components/site";
 
 export const Route = createFileRoute("/contact")({
-  head: () => meta("Contact | Shri Shyam Construction", "Get in touch with Shri Shyam Construction for a quote or consultation on your next project."),
+  head: () => meta("Contact | Shree Shyam Construction", "Get in touch with Shree Shyam Construction for a quote or consultation on your next project."),
   component: Contact,
 });
 
 const field = "w-full border bg-card px-4 py-3 outline-none focus:border-primary";
+const contactDetails = [
+  {
+    label: "Office",
+    value: "Mahalaxmi Garden, 1998/31, Part 2, Bajgera Road, Gurugram, Gurgaon, Haryana, 122001",
+  },
+  { label: "Phone", value: "+91 94167 79890", href: "tel:+919416779890" },
+  {
+    label: "Email",
+    value: "info@shreeshyamconstruction.in",
+    href: "mailto:info@shreeshyamconstruction.in",
+  },
+  { label: "Hours", value: "Mon – Sat, 9:30 AM – 6:30 PM" },
+];
 
 function Contact() {
   const [sent, setSent] = useState(false);
@@ -16,10 +29,18 @@ function Contact() {
       <PageHero eyebrow="Contact" title="Let's build something together">Tell us about your project and we'll respond within one business day.</PageHero>
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[1fr_1.4fr]">
         <div className="space-y-8">
-          {[["Office", "Jaipur, Rajasthan, India"], ["Phone", "+91 98765 43210"], ["Email", "info@shrishyamconstruction.in"], ["Hours", "Mon – Sat, 9:30 AM – 6:30 PM"]].map(([k, v]) => (
-            <div key={k} className="border-l-4 border-primary pl-4">
-              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{k}</p>
-              <p className="mt-1 text-lg font-semibold">{v}</p>
+          {contactDetails.map(({ label, value, href }) => (
+            <div key={label} className="border-l-4 border-primary pl-4">
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                {label}
+              </p>
+              {href ? (
+                <a href={href} className="mt-1 inline-block text-lg font-semibold hover:text-primary">
+                  {value}
+                </a>
+              ) : (
+                <p className="mt-1 text-lg font-semibold">{value}</p>
+              )}
             </div>
           ))}
         </div>
