@@ -20,7 +20,7 @@ function Index() {
   return (
     <>
       <section className="home-hero relative overflow-hidden bg-ink text-ink-foreground">
-        <img src={hero} alt="" width={1920} height={1088} className="hero-poster opacity-60" />
+        <img src={hero} alt="" width={1920} height={1088} className="hero-poster" />
         <video
           autoPlay
           loop
@@ -28,7 +28,7 @@ function Index() {
           playsInline
           preload="metadata"
           poster={hero}
-          className="hero-video opacity-60"
+          className="hero-video"
           aria-hidden="true"
         >
           <source src="/shree-shyam-hero.mp4" type="video/mp4" />
