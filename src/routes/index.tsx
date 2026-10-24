@@ -3,7 +3,7 @@ import hero from "@/assets/hero-construction-site.jpg";
 import siteTeam from "@/assets/site-team-planning.jpg";
 import commercialOffice from "@/assets/project-commercial-office.jpg";
 import residentialCommunity from "@/assets/project-residential-community.jpg";
-import { services, meta } from "@/components/site";
+import { services, meta, useScrollReveal } from "@/components/site";
 
 export const Route = createFileRoute("/")({
   head: () =>
@@ -15,6 +15,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  useScrollReveal();
+
   return (
     <>
       <section className="home-hero relative overflow-hidden bg-ink text-ink-foreground">
@@ -33,15 +35,15 @@ function Index() {
         </video>
         <div className="hero-scrim absolute inset-0" aria-hidden="true" />
         <div className="home-hero-content relative mx-auto max-w-7xl px-6 py-32 pb-28 md:py-44 md:pb-44">
-          <p className="hero-eyebrow text-sm font-bold uppercase tracking-[0.3em] text-primary">
+          <p data-reveal className="hero-eyebrow text-sm font-bold uppercase tracking-[0.3em] text-primary">
             Construction & Management Consultants
           </p>
-          <h1 className="mt-4 max-w-4xl text-5xl leading-[1.05] md:text-7xl">
+          <h1 data-reveal className="mt-4 max-w-4xl text-5xl leading-[1.05] md:text-7xl">
             Shree Shyam
             <br />
             Construction<span className="text-primary">.</span>
           </h1>
-          <div className="mt-8 flex flex-col gap-7 sm:max-w-3xl sm:flex-row sm:items-end sm:justify-start sm:gap-10">
+          <div data-reveal className="mt-8 flex flex-col gap-7 sm:max-w-3xl sm:flex-row sm:items-end sm:justify-start sm:gap-10">
             <p className="max-w-[22rem] text-lg leading-relaxed opacity-90">
               From the first survey to the final handover.
               <br />
@@ -78,7 +80,7 @@ function Index() {
             ["120+", "Happy Clients"],
             ["50+", "Engineers & Staff"],
           ].map(([v, l]) => (
-            <div key={l}>
+            <div key={l} data-reveal className="stat-item">
               <p className="font-display text-4xl">{v}</p>
               <p className="text-sm font-semibold uppercase tracking-wider">{l}</p>
             </div>
@@ -90,13 +92,13 @@ function Index() {
         id="what-we-do"
         className="mx-auto grid max-w-7xl scroll-mt-28 gap-10 px-6 py-20 sm:gap-12 md:grid-cols-[0.9fr_1.7fr] md:gap-14 md:py-28"
       >
-        <div className="flex items-start">
+        <div data-reveal className="flex items-start">
           <p className="flex items-center gap-4 pt-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
             <span className="h-px w-7 bg-primary" aria-hidden="true" />
             01 / Our expertise
           </p>
         </div>
-        <div>
+        <div data-reveal>
           <div className="flex flex-wrap items-end justify-between gap-6 border-b border-border pb-10 sm:pb-12">
             <h2 className="max-w-xl text-4xl leading-[1.05] sm:text-5xl md:text-6xl">
               Every detail.
@@ -115,7 +117,8 @@ function Index() {
               <Link
                 key={service.n}
                 to="/services"
-                className="group grid grid-cols-[2rem_minmax(0,1fr)_1rem] gap-4 border-b border-border py-7 sm:grid-cols-[2.5rem_minmax(0,1fr)_1rem] sm:gap-5 sm:py-8"
+                data-reveal
+                className="service-row group grid grid-cols-[2rem_minmax(0,1fr)_1rem] gap-4 border-b border-border py-7 sm:grid-cols-[2.5rem_minmax(0,1fr)_1rem] sm:gap-5 sm:py-8"
               >
                 <span className="pt-1 text-sm text-muted-foreground">{service.n}</span>
                 <span>
@@ -140,7 +143,7 @@ function Index() {
 
       <section className="bg-secondary">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 sm:py-24 lg:grid-cols-2 lg:gap-16 lg:py-28">
-          <div className="relative pb-8 pr-8">
+          <div data-reveal className="relative pb-8 pr-8">
             <img
               src={siteTeam}
               alt="Construction engineers reviewing project blueprints on site"
@@ -154,7 +157,7 @@ function Index() {
               <p className="mt-1 text-sm">Driven by quality.</p>
             </div>
           </div>
-          <div className="lg:py-8">
+          <div data-reveal className="lg:py-8">
             <p className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
               <span className="h-px w-7 bg-primary" aria-hidden="true" />
               02 / The way we work
@@ -197,7 +200,7 @@ function Index() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:py-28">
-        <div className="flex flex-wrap items-end justify-between gap-6">
+        <div data-reveal className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
               <span className="h-px w-7 bg-primary" aria-hidden="true" />
@@ -226,7 +229,7 @@ function Index() {
               title: "Gated Apartment Community",
             },
           ].map((project) => (
-            <Link key={project.title} to="/gallery" className="group block min-w-0">
+            <Link key={project.title} to="/gallery" data-reveal className="project-card group block min-w-0">
               <div className="overflow-hidden bg-secondary">
                 <img
                   src={project.src}

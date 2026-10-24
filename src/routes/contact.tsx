@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { PageHero, meta } from "@/components/site";
+import { PageHero, meta, useScrollReveal } from "@/components/site";
 
 export const Route = createFileRoute("/contact")({
   head: () => meta("Contact | Shree Shyam Construction", "Get in touch with Shree Shyam Construction for a quote or consultation on your next project."),
@@ -19,16 +19,17 @@ const contactDetails = [
     value: "info@shreeshyamconstruction.in",
     href: "mailto:info@shreeshyamconstruction.in",
   },
-  { label: "Hours", value: "Mon – Sat, 9:30 AM – 6:30 PM" },
 ];
 
 function Contact() {
   const [sent, setSent] = useState(false);
+  useScrollReveal();
+
   return (
     <>
       <PageHero eyebrow="Contact" title="Let's build something together">Tell us about your project and we'll respond within one business day.</PageHero>
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[1fr_1.4fr]">
-        <div className="space-y-8">
+        <div data-reveal className="space-y-8">
           {contactDetails.map(({ label, value, href }) => (
             <div key={label} className="border-l-4 border-primary pl-4">
               <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
@@ -49,7 +50,7 @@ function Contact() {
             <div><p className="font-display text-3xl text-primary">Thank you!</p><p className="mt-3">We've received your message and will be in touch soon.</p></div>
           </div>
         ) : (
-          <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="grid gap-4 sm:grid-cols-2">
+          <form data-reveal onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="grid gap-4 sm:grid-cols-2">
             <input required placeholder="Full name" className={field} />
             <input required type="tel" placeholder="Phone" className={field} />
             <input required type="email" placeholder="Email" className={`${field} sm:col-span-2`} />

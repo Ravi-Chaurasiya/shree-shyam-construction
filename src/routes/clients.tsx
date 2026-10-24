@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, meta } from "@/components/site";
+import { PageHero, meta, useScrollReveal } from "@/components/site";
 
 const clients = ["Rajasthan Housing Board", "Agarwal Developers", "Shree Cements", "Sunrise Hospitals", "Metro Infra Ltd.", "Jaipur Development Authority", "Kothari Textiles", "Green Valley Schools"];
 const reviews = [
@@ -9,18 +9,24 @@ const reviews = [
 
 export const Route = createFileRoute("/clients")({
   head: () => meta("Our Clients | Shree Shyam Construction", "Trusted by developers, institutions and government bodies across the region."),
-  component: () => (
+  component: Clients,
+});
+
+function Clients() {
+  useScrollReveal();
+
+  return (
     <>
       <PageHero eyebrow="Clients" title="Trusted by builders, businesses & institutions" />
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid grid-cols-2 gap-px border bg-border md:grid-cols-4">
           {clients.map((c) => (
-            <div key={c} className="grid h-32 place-items-center bg-card p-4 text-center font-display text-muted-foreground transition-colors hover:text-primary">{c}</div>
+            <div key={c} data-reveal className="client-card grid h-32 place-items-center bg-card p-4 text-center font-display text-muted-foreground transition-colors hover:text-primary">{c}</div>
           ))}
         </div>
         <div className="mt-16 grid gap-6 md:grid-cols-2">
           {reviews.map((r) => (
-            <blockquote key={r.n} className="bg-ink p-10 text-ink-foreground">
+            <blockquote key={r.n} data-reveal className="bg-ink p-10 text-ink-foreground">
               <p className="font-display text-5xl text-primary">"</p>
               <p className="text-lg">{r.q}</p>
               <footer className="mt-6 text-sm font-semibold uppercase tracking-wider text-primary">— {r.n}</footer>
@@ -29,5 +35,5 @@ export const Route = createFileRoute("/clients")({
         </div>
       </section>
     </>
-  ),
-});
+  );
+}

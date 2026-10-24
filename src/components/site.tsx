@@ -1,5 +1,34 @@
 import { Link } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
+
+export function useScrollReveal() {
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return;
+
+    const page = document.querySelector("main");
+    if (!page) return;
+
+    document.documentElement.classList.add("motion-ready");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        }
+      },
+      { rootMargin: "0px 0px -48px 0px", threshold: 0.08 },
+    );
+    page.querySelectorAll<HTMLElement>("[data-reveal]").forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+}
 
 const nav = [
   { to: "/", label: "Home" },
@@ -14,8 +43,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-ink text-ink-foreground">
       <div className="mx-auto grid min-h-[100px] max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 px-5 py-4 sm:px-8 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:gap-x-6 lg:px-10 lg:py-5">
-        <Link to="/" className="flex w-fit items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center bg-primary font-sans text-lg font-bold text-primary-foreground">
+        <Link to="/" className="group flex w-fit items-center gap-3">
+          <span className="brand-mark grid h-10 w-10 place-items-center bg-primary font-sans text-lg font-bold text-primary-foreground">
             SS
           </span>
           <span className="font-sans text-lg font-bold leading-tight">
@@ -30,7 +59,7 @@ export function Header() {
               key={n.to}
               to={n.to}
               activeOptions={{ exact: true }}
-              className="whitespace-nowrap py-2 transition-colors hover:text-primary"
+              className="nav-link relative whitespace-nowrap py-2 transition-colors hover:text-primary"
               activeProps={{ className: "text-primary" }}
             >
               {n.label}
@@ -47,7 +76,7 @@ export function Header() {
           </span>
         </Link>
       </div>
-      <div className="hazard h-1.5" />
+      <div className="hazard h-1.5" aria-hidden="true" />
     </header>
   );
 }
@@ -129,9 +158,9 @@ export function PageHero({
   return (
     <section className="border-b bg-secondary">
       <div className="mx-auto max-w-7xl px-6 py-20">
-        <p className="text-sm font-bold uppercase tracking-[0.3em] text-primary">{eyebrow}</p>
-        <h1 className="mt-3 max-w-3xl text-4xl md:text-6xl">{title}</h1>
-        {children && <p className="mt-5 max-w-2xl text-lg text-muted-foreground">{children}</p>}
+        <p data-reveal className="text-sm font-bold uppercase tracking-[0.3em] text-primary">{eyebrow}</p>
+        <h1 data-reveal className="mt-3 max-w-3xl text-4xl md:text-6xl">{title}</h1>
+        {children && <p data-reveal className="mt-5 max-w-2xl text-lg text-muted-foreground">{children}</p>}
       </div>
     </section>
   );

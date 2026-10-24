@@ -86,6 +86,7 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  animation: hero-drift 28s ease-in-out infinite alternate;
 }
 
 .hero-scrim {
@@ -120,5 +121,124 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-video {
     display: none;
+  }
+}
+
+.hazard {
+  background-size: 56px 100%;
+  animation: hazard-flow 1.8s linear infinite;
+}
+
+.brand-mark {
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.group:hover .brand-mark {
+  transform: rotate(-6deg) scale(1.08);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary) 25%, transparent);
+}
+
+.nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--primary);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.nav-link:hover::after,
+.nav-link[data-status="active"]::after {
+  transform: scaleX(1);
+}
+
+.motion-ready [data-reveal]:not(.is-visible) {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+}
+
+[data-reveal] {
+  transition:
+    opacity 650ms cubic-bezier(0.2, 0.65, 0.3, 1),
+    transform 650ms cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.service-card,
+.client-card,
+.gallery-card,
+.project-card {
+  transition:
+    color 250ms ease,
+    background-color 250ms ease,
+    transform 350ms cubic-bezier(0.2, 0.65, 0.3, 1),
+    box-shadow 350ms ease;
+}
+
+.service-card:hover,
+.client-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px color-mix(in oklab, var(--ink) 12%, transparent);
+}
+
+.gallery-card img {
+  transition:
+    transform 700ms cubic-bezier(0.2, 0.65, 0.3, 1),
+    opacity 400ms ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.06);
+}
+
+.project-card img {
+  transition: transform 700ms cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.project-card:hover img {
+  transform: scale(1.045);
+}
+
+.stat-item {
+  transition: transform 300ms ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes hazard-flow {
+  to {
+    background-position: 56px 0;
+  }
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .motion-ready [data-reveal]:not(.is-visible) {
+    opacity: 1;
+    transform: none;
   }
 }

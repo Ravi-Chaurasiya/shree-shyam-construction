@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import g2 from "@/assets/site-team-planning.jpg";
-import { PageHero, meta } from "@/components/site";
+import { PageHero, meta, useScrollReveal } from "@/components/site";
 
 export const Route = createFileRoute("/about")({
   head: () =>
@@ -8,11 +8,17 @@ export const Route = createFileRoute("/about")({
       "About Us | Shree Shyam Construction",
       "Learn about Shree Shyam Construction — our story, mission and values as construction and management consultants.",
     ),
-  component: () => (
+  component: About,
+});
+
+function About() {
+  useScrollReveal();
+
+  return (
     <>
       <PageHero eyebrow="About Us" title="Built on trust, driven by quality" />
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2">
-        <div className="space-y-5 text-lg text-muted-foreground">
+        <div data-reveal className="space-y-5 text-lg text-muted-foreground">
           <p>
             Shree Shyam Construction is a construction and management consultancy firm committed to
             delivering projects that stand the test of time.
@@ -44,8 +50,9 @@ export const Route = createFileRoute("/about")({
           width={1024}
           height={1024}
           className="aspect-square w-full object-cover"
+          data-reveal
         />
       </section>
     </>
-  ),
-});
+  );
+}

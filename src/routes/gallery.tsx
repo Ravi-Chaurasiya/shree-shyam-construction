@@ -3,7 +3,7 @@ import hero from "@/assets/hero-construction-site.jpg";
 import commercialOffice from "@/assets/project-commercial-office.jpg";
 import siteTeam from "@/assets/site-team-planning.jpg";
 import residentialCommunity from "@/assets/project-residential-community.jpg";
-import { PageHero, meta } from "@/components/site";
+import { PageHero, meta, useScrollReveal } from "@/components/site";
 
 const items = [
   { src: hero, t: "High-Rise Residential Tower", c: "Under Construction", span: "md:col-span-2" },
@@ -23,12 +23,18 @@ export const Route = createFileRoute("/gallery")({
       "Project Gallery | Shree Shyam Construction",
       "A look at residential, commercial and infrastructure projects built and managed by Shree Shyam Construction.",
     ),
-  component: () => (
+  component: Gallery,
+});
+
+function Gallery() {
+  useScrollReveal();
+
+  return (
     <>
       <PageHero eyebrow="Gallery" title="Our work speaks for itself" />
       <section className="mx-auto grid max-w-7xl gap-4 px-6 py-20 md:grid-cols-3">
         {items.map((i) => (
-          <figure key={i.t} className={`group relative overflow-hidden bg-ink ${i.span}`}>
+          <figure key={i.t} data-reveal className={`gallery-card group relative overflow-hidden bg-ink ${i.span}`}>
             <img
               src={i.src}
               alt={i.t}
@@ -43,5 +49,5 @@ export const Route = createFileRoute("/gallery")({
         ))}
       </section>
     </>
-  ),
-});
+  );
+}
