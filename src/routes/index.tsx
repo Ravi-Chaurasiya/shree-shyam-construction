@@ -8,7 +8,7 @@ import { services, meta, useScrollReveal } from "@/components/site";
 export const Route = createFileRoute("/")({
   head: () =>
     meta(
-      "Shree Shyam Construction | Construction & Management Consultants",
+      "Shree Shyam Contractor | Construction & Management Consultants",
       "Trusted construction and project management consultants delivering residential, commercial and industrial projects on time and on budget.",
     ),
   component: Index,
@@ -41,7 +41,7 @@ function Index() {
           <h1 data-reveal className="mt-4 max-w-4xl text-5xl leading-[1.05] md:text-7xl">
             Shree Shyam
             <br />
-            Construction<span className="text-primary">.</span>
+            Contractor<span className="text-primary">.</span>
           </h1>
           <div data-reveal className="mt-8 flex flex-col gap-7 sm:max-w-3xl sm:flex-row sm:items-end sm:justify-start sm:gap-10">
             <p className="max-w-[22rem] text-lg leading-relaxed opacity-90">

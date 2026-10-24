@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, services, meta, useScrollReveal } from "@/components/site";
 
 export const Route = createFileRoute("/services")({
-  head: () => meta("Services | Shree Shyam Construction", "Civil construction, project management, consultancy, quantity surveying, interiors and quality audits."),
+  head: () => meta("Services | Shree Shyam Contractor", "Civil construction, project management, consultancy, quantity surveying, interiors and quality audits."),
   component: Services,
 });
 

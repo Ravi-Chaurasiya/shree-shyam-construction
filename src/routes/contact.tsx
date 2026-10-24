@@ -3,7 +3,7 @@ import { useState } from "react";
 import { PageHero, meta, useScrollReveal } from "@/components/site";
 
 export const Route = createFileRoute("/contact")({
-  head: () => meta("Contact | Shree Shyam Construction", "Get in touch with Shree Shyam Construction for a quote or consultation on your next project."),
+  head: () => meta("Contact | Shree Shyam Contractor", "Get in touch with Shree Shyam Contractor for a quote or consultation on your next project."),
   component: Contact,
 });
 
@@ -16,8 +16,8 @@ const contactDetails = [
   { label: "Phone", value: "+91 94167 79890", href: "tel:+919416779890" },
   {
     label: "Email",
-    value: "info@shreeshyamconstruction.in",
-    href: "mailto:info@shreeshyamconstruction.in",
+    value: "shreeshyamcontractor@gmail.com",
+    href: "mailto:shreeshyamcontractor@gmail.com",
   },
 ];
 

@@ -1,6 +1,6 @@
-# Shree Shyam Construction
+# Shree Shyam Contractor
 
-Company website for Shree Shyam Construction, a construction and management consultancy.
+Company website for Shree Shyam Contractor, a construction and management consultancy.
 
 ## Technology
 

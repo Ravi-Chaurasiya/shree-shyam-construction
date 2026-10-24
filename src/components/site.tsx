@@ -50,7 +50,7 @@ export function Header() {
           <span className="font-sans text-lg font-bold leading-tight">
             SHREE SHYAM
             <br />
-            <span className="text-xs tracking-[0.3em] text-primary">CONSTRUCTION</span>
+            <span className="text-xs tracking-[0.3em] text-primary">CONTRACTOR</span>
           </span>
         </Link>
         <nav className="col-span-2 row-start-2 flex min-w-0 flex-wrap items-center justify-center gap-x-3 gap-y-0 pb-1 text-xs font-semibold tracking-wide sm:gap-x-6 sm:text-sm lg:col-span-1 lg:col-start-2 lg:row-start-1 lg:flex-nowrap lg:gap-x-4 lg:pb-0 xl:gap-x-6">
@@ -106,7 +106,7 @@ export function Footer() {
         </div>
         <div className="grid gap-10 border-b border-ink-foreground/20 py-10 sm:grid-cols-2 lg:grid-cols-[1.25fr_1fr_1fr] lg:gap-12 lg:py-12">
           <div>
-            <p className="font-sans text-xl font-bold">SHREE SHYAM CONSTRUCTION</p>
+            <p className="font-sans text-xl font-bold">SHREE SHYAM CONTRACTOR</p>
             <p className="mt-4 text-ink-foreground/70">
               Construction &amp; management consultants.
               <br />
@@ -131,14 +131,14 @@ export function Footer() {
             </a>
             <a
               className="block break-words transition-colors hover:text-primary"
-              href="mailto:info@shreeshyamconstruction.in"
+              href="mailto:shreeshyamcontractor@gmail.com"
             >
-              info@shreeshyamconstruction.in
+              shreeshyamcontractor@gmail.com
             </a>
           </address>
         </div>
         <div className="flex flex-col gap-2 pt-6 text-sm text-ink-foreground/60 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Shree Shyam Construction</p>
+          <p>© {new Date().getFullYear()} Shree Shyam Contractor</p>
           <p>Construction. Consultancy. Confidence.</p>
         </div>
       </div>

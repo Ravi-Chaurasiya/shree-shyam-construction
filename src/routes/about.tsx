@@ -5,8 +5,8 @@ import { PageHero, meta, useScrollReveal } from "@/components/site";
 export const Route = createFileRoute("/about")({
   head: () =>
     meta(
-      "About Us | Shree Shyam Construction",
-      "Learn about Shree Shyam Construction — our story, mission and values as construction and management consultants.",
+      "About Us | Shree Shyam Contractor",
+      "Learn about Shree Shyam Contractor — our story, mission and values as construction and management consultants.",
     ),
   component: About,
 });
@@ -20,7 +20,7 @@ function About() {
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2">
         <div data-reveal className="space-y-5 text-lg text-muted-foreground">
           <p>
-            Shree Shyam Construction is a construction and management consultancy firm committed to
+            Shree Shyam Contractor is a construction and management consultancy firm committed to
             delivering projects that stand the test of time.
           </p>
           <p>
