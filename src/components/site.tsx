@@ -126,14 +126,14 @@ export function Footer() {
           </nav>
           <address className="not-italic leading-7 text-ink-foreground/80">
             <p>MAHALAXMI GARDEN, 1998/31, PART 2, BAJGERA ROAD, GURUGRAM, Gurgaon, Haryana, 122001</p>
-            <a className="block transition-colors hover:text-primary" href="tel:+919416779890">
-              +91 94167 79890
+            <a className="block transition-colors hover:text-primary" href="tel:+918826636375">
+              +91 88266 36375
             </a>
             <a
               className="block break-words transition-colors hover:text-primary"
-              href="mailto:shreeshyamcontractor@gmail.com"
+              href="mailto:shreeshyam33@yahoo.com"
             >
-              shreeshyamcontractor@gmail.com
+              shreeshyam33@yahoo.com
             </a>
           </address>
         </div>
