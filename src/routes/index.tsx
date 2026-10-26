@@ -75,8 +75,8 @@ function Index() {
       <section className="border-b bg-primary text-primary-foreground">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-6 py-10 md:grid-cols-4">
           {[
-            ["15+", "Years Experience"],
-            ["250+", "Projects Completed"],
+            ["6+", "Years Experience"],
+            ["100+", "Projects Completed"],
             ["120+", "Happy Clients"],
             ["50+", "Engineers & Staff"],
           ].map(([v, l]) => (
